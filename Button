@@ -1,0 +1,32 @@
+#Button
+
+import tkinter as tk
+
+pushed = False
+
+def info_for_user():
+  global pushed
+  if pushed == False:
+    print("Your machine has just been activated, please be patient")
+    pushed = True
+  else:
+    print("Your machine has already been started, unfortunatly this will not make the machine go faster ;)")
+
+
+
+root = tk.Tk()
+frame = tk.Frame(root)
+frame.pack()
+
+button = tk.Button(frame, 
+                   text="Start", 
+                   fg="green",
+                   command=info_for_user)
+button.pack(side=tk.LEFT)
+slogan = tk.Button(frame,
+                   text="Stop",
+                   fg="red",
+                   command=quit)
+slogan.pack(side=tk.LEFT)
+
+root.mainloop()
